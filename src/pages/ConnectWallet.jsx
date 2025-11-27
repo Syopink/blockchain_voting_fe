@@ -33,11 +33,14 @@ const ConnectWallet = ({ user, onConnect }) => {
     if (!wallet) return message.error("Chưa có địa chỉ ví để lưu!");
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5005/api/v1/connect-wallet", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: user.id, walletAddress: wallet }),
-      });
+      const res = await fetch(
+        "https://m5x471n0-5005.asse.devtunnels.ms/api/v1/connect-wallet",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId: user.id, walletAddress: wallet }),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         message.success("Wallet connected successfully!");

@@ -10,7 +10,7 @@ const AuthPage = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = "http://localhost:5005/api/v1";
+  const API_BASE = "https://m5x471n0-5005.asse.devtunnels.ms/api/v1";
 
   const handleRegister = async (values) => {
     setLoading(true);
